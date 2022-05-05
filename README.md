@@ -14,7 +14,7 @@
   * Creamos el archivo ```index.js``` como principal
   * Creamos el archivo ```.env```  y ```.env.example``` para manejar los archivos de entorno
   * Creamos el archivo ```.gitignore```[Click Aquí](https://github.com/github/gitignore/blob/main/Node.gitignore)
-  * ```$ npm install -g nodemon```      Instalamos la utilidad de inferfaz Nodemon (Wrapper) 
+  * ```$ npm install --save-dev nodemon```      Instalamos la utilidad de inferfaz Nodemon (Wrapper) 
   * ```$ npm install --global mocha```  Instalamos Mocha.js, dependencia para testing
   * ```$ npm install chai```            Instalamos Chai.js, dependencia para testing
   * Creamos las carpetas para el desarrollo ```./src/entities```, ```./src/repositories``` y ```./test```
@@ -23,4 +23,4 @@
 **Iniciando el Proyecto**
    * 
    * ```$ npm i``` para instalar devDependencies de *.json de configuracion
-   * ```$ nodemon index``` para ejecutar las pruebas de local host en "tiempo real"
+   * ```$ npm run dev``` para ejecutar el servidor con nodemon
