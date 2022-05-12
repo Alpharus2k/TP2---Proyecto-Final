@@ -29,4 +29,5 @@
    * 
    * ```$ npm i``` para instalar devDependencies de *.json de configuracion
    * ```$ npm run dev``` para ejecutar el servidor con nodemon
-   * ```$ npx sequelize-cli init```
+   * ```$ npx sequelize-cli init``` para incorporar una Barra de herramientas de sequelize
+   
