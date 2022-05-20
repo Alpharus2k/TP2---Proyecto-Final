@@ -17,10 +17,10 @@
     "mysql2": "^2.3.3"
   },
   "devDependencies": {
+    "@ngneat/falso": "^5.3.0",
     "mocha": "^10.0.0",
     "nodemon": "^2.0.16",
     "sequelize": "^6.19.0",
-    "sequelize-cli": "^6.4.1",
-    "@ngneat/falso": "5.3.0"
+    "sequelize-cli": "^6.4.1"
   }
 }
