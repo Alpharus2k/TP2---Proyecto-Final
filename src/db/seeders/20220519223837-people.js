@@ -1,16 +1,16 @@
 'use strict';
 const per = require('@ngneat/falso')
-const cantPer = 100;
+const amount = 100;
 
 module.exports = {
   
   async up (queryInterface, Sequelize) {
-    const people = [];
-    for(let i = 0; i < cantPer; i++){
-      people.push({name: per.randFullName(), email: per.randEmail()})
+    const list = [];
+    for(let i = 0; i < amount; i++){
+      list.push({name: per.randFullName(), email: per.randEmail()})
     }
   
-      await queryInterface.bulkInsert('people', people, {});
+      await queryInterface.bulkInsert('people', list, {});
     
   },
 
