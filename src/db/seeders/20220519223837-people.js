@@ -5,12 +5,12 @@ const cantPer = 100;
 module.exports = {
   
   async up (queryInterface, Sequelize) {
-    const personas = [];
+    const people = [];
     for(let i = 0; i < cantPer; i++){
-      personas.push({name: per.randFullName(), email: per.randEmail()})
+      people.push({name: per.randFullName(), email: per.randEmail()})
     }
   
-      await queryInterface.bulkInsert('people', personas, {});
+      await queryInterface.bulkInsert('people', people, {});
     
   },
 
