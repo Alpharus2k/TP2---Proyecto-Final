@@ -12,7 +12,7 @@ module.exports = {
                       city: aux.city,county: aux.county,
                       zipCode: aux.zipCode, street: aux.street,
                       number: (i*i+1),floor: (i+2),
-                      department: "A",tower: null,note: "Tocar Timbre al lado"})
+                      department: 'A',tower: null,note: "Tocar Timbre al lado"})
     }
     await queryInterface.bulkInsert('addresses', addressList, {});
   },
