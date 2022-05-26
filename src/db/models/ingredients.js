@@ -10,6 +10,7 @@ module.exports = (sequelize, DataTypes) => {
   Ingredients.init({
     name: {
       type: Sequelize.DataTypes.STRING(100),
+      unique: true,
       allowNull: false
     },
     typeMeasuresId: {
