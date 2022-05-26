@@ -18,8 +18,8 @@ module.exports = (sequelize, DataTypes) => {
     }
   }, {
     sequelize,
-    modelName: 'FoodHazardsClient',
-    tableName: 'foodHazardsClient',
+    modelName: 'FoodHazardsClients',
+    tableName: 'foodHazardsClients',
   });
   return FoodHazardsClient;
 };
