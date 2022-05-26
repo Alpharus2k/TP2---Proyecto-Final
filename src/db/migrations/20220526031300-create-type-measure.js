@@ -1,19 +1,21 @@
 'use strict';
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('foodHazardsInredients', {
+    await queryInterface.createTable('typeMeasures', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.DataTypes.INTEGER.UNSIGNED
       },
-      ingredientId: {
-        type: Sequelize.DataTypes.INTEGER,
+      name: {
+        type: Sequelize.DataTypes.STRING(20),
+        unique: true,
         allowNull: false
       },
-      foodDangersId: {
-        type: Sequelize.DataTypes.INTEGER,
+      description: {
+        type: Sequelize.DataTypes.STRING(2),
+        unique: true,
         allowNull: false
       },
       createdAt: {
@@ -31,6 +33,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('foodHazardsInredients');
+    await queryInterface.dropTable('typeMeasures');
   }
 };
