@@ -9,7 +9,7 @@ module.exports = {
         type: Sequelize.INTEGER.UNSIGNED
       },
       peopleId: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.INTEGER.UNSIGNED,
         allowNull: false
       },
       country: {

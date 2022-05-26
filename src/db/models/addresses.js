@@ -1,33 +1,61 @@
 'use strict';
-const {
-  Model
-} = require('sequelize');
+const {Model} = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Addresses extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
+    
     static associate(models) {
       // define association here
     }
   }
   Addresses.init({
-    peopleId: DataTypes.INTEGER,
-    country: DataTypes.STRING,
-    city: DataTypes.STRING,
-    county: DataTypes.STRING,
-    zipCode: DataTypes.STRING,
-    street: DataTypes.STRING,
-    number: DataTypes.INTEGER,
-    floor: DataTypes.INTEGER,
-    department: DataTypes.STRING,
-    tower: DataTypes.STRING,
-    note: DataTypes.STRING
+    peopleId: {
+      type: Sequelize.INTEGER.UNSIGNED,
+      allowNull: false
+    },
+    country: {
+      type: Sequelize.STRING(60),
+      allowNull: false
+    },
+    city: {
+      type: Sequelize.STRING(60),
+      allowNull: false
+    },
+    county: {
+      type: Sequelize.STRING(60),
+      allowNull: false
+    },
+    zipCode: {
+      type: Sequelize.STRING(10),
+      allowNull: true
+    },
+    street: {
+      type: Sequelize.STRING(200),
+      allowNull: false
+    },
+    number: {
+      type: Sequelize.INTEGER.UNSIGNED,
+      allowNull: false
+    },
+    floor: {
+      type: Sequelize.INTEGER,
+      allowNull: true
+    },
+    department: {
+      type: Sequelize.STRING(5),
+      allowNull: true
+    },
+    tower: {
+      type: Sequelize.STRING(20),
+      allowNull: true
+    },
+    note: {
+      type: Sequelize.STRING(300),
+      allowNull: true
+    }
   }, {
     sequelize,
     modelName: 'Addresses',
+    tablename: 'addresses'
   });
   return Addresses;
 };
