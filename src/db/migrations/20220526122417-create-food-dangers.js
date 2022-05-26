@@ -6,7 +6,7 @@ module.exports = {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: Sequelize.DataTypes.INTEGER.UNSIGNED
       },
       name:{
         type: Sequelize.DataTypes.STRING(80),
