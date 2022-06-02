@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   AddressBook.init({
-    poepleId: {
+    peopleId: {
       type: Sequelize.DataTypes.INTEGER.UNSIGNED,
       allowNull: false},
     addressId:{

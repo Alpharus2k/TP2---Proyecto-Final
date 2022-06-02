@@ -1,19 +1,23 @@
 'use strict';
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('addressBook', {
+    await queryInterface.createTable('recipesBook', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.DataTypes.INTEGER.UNSIGNED
       },
-      peopleId: {
+      recipeId: {
         type: Sequelize.DataTypes.INTEGER.UNSIGNED,
         allowNull: false
       },
-      addressId: {
+      ingredientId: {
         type: Sequelize.DataTypes.INTEGER.UNSIGNED,
+        allowNull: false
+      },
+      perProducedUnit: {
+        type: Sequelize.DataTypes.DECIMAL(10, 2),
         allowNull: false
       },
       createdAt: {
@@ -31,6 +35,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('addressBook');
+    await queryInterface.dropTable('recipesBook');
   }
 };
