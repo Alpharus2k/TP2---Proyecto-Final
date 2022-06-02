@@ -1,3 +1,6 @@
+const dotenv = require('dotenv')
+dotenv.config()
+
 module.exports =
 {
   "development": {
@@ -10,8 +13,8 @@ module.exports =
   },
   "test": {
     "username": process.env.DB_USER,
-    "port": process.env.PUERTO,
     "password": process.env.DB_PSWD,
+    "port": process.env.DB_PUERTO,
     "database": process.env.DB_NAME,
     "host": process.env.DB_HOST,
     "dialect": process.env.DB_DIALECT
@@ -19,7 +22,7 @@ module.exports =
   "production": {
     "username": process.env.DB_USER,
     "password": process.env.DB_PSWD,
-    "port": process.env.PUERTO,
+    "port": process.env.DB_PUERTO,
     "database": process.env.DB_NAME,
     "host": process.env.DB_HOST,
     "dialect": process.env.DB_DIALECT
