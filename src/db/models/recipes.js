@@ -1,26 +1,25 @@
 'use strict';
 const {Model} = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class Ingredients extends Model {
-    
+  class Recipes extends Model {
+   
     static associate(models) {
       // define association here
     }
   }
-  Ingredients.init({
+  Recipes.init({
     name: {
       type: Sequelize.DataTypes.STRING(100),
-      unique: true,
       allowNull: false
     },
-    typeMeasuresId: {
-      type: Sequelize.DataTypes.INTEGER.UNSIGNED,
-      allowNull: false
+    description: {
+      type: Sequelize.DataTypes.STRING(200),
+      allowNull: true
     }
   }, {
     sequelize,
-    modelName: 'Ingredients',
-    tableName: 'ingredients',
+    modelName: 'Recipes',
+    tableName: 'recipes',
   });
-  return Ingredients;
+  return Recipes;
 };
