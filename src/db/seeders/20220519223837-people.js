@@ -7,7 +7,7 @@ module.exports = {
   async up (queryInterface, Sequelize) {
     const people = [];
     for(let i = 0; i < cantPer; i++){
-      people.push({name: per.randFullName(), email: per.randEmail()})
+      people.push({name: per.randFullName(), email: per.randEmail(),createdAt: new Date,updatedAt: new Date})
     }
   
       await queryInterface.bulkInsert('people', people, {});
