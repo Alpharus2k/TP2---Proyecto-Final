@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
       type: Sequelize.DataTypes.STRING(120),
       allowNull: false
        },
-   
+       
     email:{
       type: Sequelize.DataTypes.STRING(100),
       unique: true,
@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'People',
-    tableName: 'people',
+    tableName: 'people'
   });
   return People;
 };

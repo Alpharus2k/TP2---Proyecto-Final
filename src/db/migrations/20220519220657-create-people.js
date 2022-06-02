@@ -15,7 +15,7 @@ module.exports = {
       email:{
         type: Sequelize.DataTypes.STRING(100),
         unique: true,
-        allowNull: false
+        allowNull: true
          },
       createdAt: {
         type: Sequelize.DataTypes.DATE,
