@@ -8,12 +8,10 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.DataTypes.INTEGER.UNSIGNED
          },
-
       name:{
         type: Sequelize.DataTypes.STRING(120),
         allowNull: false
          },
-
       email:{
         type: Sequelize.DataTypes.STRING(100),
         unique: true,
@@ -21,6 +19,7 @@ module.exports = {
          },
       createdAt: {
         type: Sequelize.DataTypes.DATE,
+        allowNull: true
       },
       updatedAt: {
         type: Sequelize.DataTypes.DATE,
