@@ -4,7 +4,9 @@ module.exports = (sequelize, DataTypes) => {
   class AddressBook extends Model {
     
     static associate(models) {
-      // define association here
+      AddressBook.hasOne(models.Addresses, {
+        foreignKey: 'addressId'
+      })
     }
   }
   AddressBook.init({

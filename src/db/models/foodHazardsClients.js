@@ -4,7 +4,9 @@ module.exports = (sequelize, DataTypes) => {
   class FoodHazardsClient extends Model {
 
     static associate(models) {
-      // define association here
+     FoodHazardsClient.belongsTo(models.client, {
+       foreignKey: 'clientId',
+     })
     }
   }
   FoodHazardsClient.init({

@@ -4,7 +4,12 @@ module.exports = (sequelize, DataTypes) => {
   class Client extends Model {
 
     static associate(models) {
-      // define association here
+       Client.belongsToMany(models.addressBook, {
+        through: 'client_addressBook',
+      }),
+      Client.belongsTo(models.People, {
+        foreignKey: 'peopleId',
+      })
     }
   }
   Client.init({

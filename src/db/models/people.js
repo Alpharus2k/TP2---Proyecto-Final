@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
   class People extends Model {
  
     static associate(models) {
-      // define association here
+      
     }
   }
   People.init({
