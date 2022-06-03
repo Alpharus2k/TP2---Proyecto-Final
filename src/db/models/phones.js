@@ -1,10 +1,13 @@
 'use strict';
 const {Model} = require('sequelize');
+const people = require('./people');
 module.exports = (sequelize, DataTypes) => {
   class Phones extends Model {
     
     static associate(models) {
-      // define association here
+      Phones.belongsTo(models.People, {
+        foreignKey: 'peopleId',
+      })
     }
   }
   Phones.init({
