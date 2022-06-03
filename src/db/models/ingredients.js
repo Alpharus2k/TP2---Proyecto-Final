@@ -4,7 +4,9 @@ module.exports = (sequelize, DataTypes) => {
   class Ingredients extends Model {
     
     static associate(models) {
-      // define association here
+      Ingredients.hasOne(models.TypeMeasures, {
+        foreignKey: 'typeMeasureId'
+      })
     }
   }
   Ingredients.init({
