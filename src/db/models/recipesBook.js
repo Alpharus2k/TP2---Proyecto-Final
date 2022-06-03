@@ -4,7 +4,9 @@ module.exports = (sequelize, DataTypes) => {
   class RecipesBook extends Model {
     
     static associate(models) {
-      // define association here
+     RecipesBook.hasMany(models.recipes, {
+       foreignKey: 'recipeId'
+     })
     }
   }
   RecipesBook.init({

@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
 
     static associate(models) {
      FoodHazardsClient.hasMany(models.foodDanger, {
-       through: 'foodHazard_foodDanger',
+       foreignKey: 'foodDangerId',
      })
   }
 }
