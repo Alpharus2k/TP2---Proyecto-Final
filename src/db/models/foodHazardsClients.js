@@ -4,11 +4,11 @@ module.exports = (sequelize, DataTypes) => {
   class FoodHazardsClient extends Model {
 
     static associate(models) {
-     FoodHazardsClient.belongsTo(models.client, {
-       foreignKey: 'clientId',
+     FoodHazardsClient.hasMany(models.foodDanger, {
+       through: 'foodHazard_foodDanger',
      })
-    }
   }
+}
   FoodHazardsClient.init({
     clientId: {
       type: Sequelize.DataTypes.INTEGER.UNSIGNED,

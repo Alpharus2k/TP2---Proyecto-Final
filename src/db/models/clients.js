@@ -9,6 +9,9 @@ module.exports = (sequelize, DataTypes) => {
       }),
       Client.belongsTo(models.People, {
         foreignKey: 'peopleId',
+      }),
+      Client.hasMany(models.FoodHazardsClients, {
+        through: 'client_foodHazard'
       })
     }
   }
