@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
   class Client extends Model {
 
     static associate(models) {
-      // define association here
+      
     }
   }
   Client.init({
