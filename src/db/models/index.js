@@ -7,6 +7,43 @@ const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || 'development';
 const config = require(__dirname + '/../../config/database.json')[env];
 const db = {};
+const express = require('express');
+const app = express();
+const {recipesBook} = require('./src/db/models');
+const {clients} = require('./src/db/models');
+const {recipes} = require('./src/db/models');
+const {people} = require('./src/db/models');
+const {ingredients} = require('./src/db/models');
+
+app.get('/', function(req,res) {
+  res.send('');
+});
+
+app.get('/recipesBook', async function (req,res){
+  let recipeBook = await recipesBook.find()
+  return res.send(recipeBook)
+})
+
+app.getAllIngredients('/ingredients', async function (req,res) {
+  const resul = {}
+  await ingredients.forEach(function (ingredient) {
+    resul.push(ingredient)
+  })
+  return res.send(resul)
+})
+
+app.listen(5000);
+
+app.post('/recipeBook', async function (req,res) {
+  await recipeBook.create ({
+    recipeId: req.body.recipeId,
+    ingredientId: req.body.ingredientId,
+    perProducedUnit: req.body.perProducedUnit
+  })
+  res.status(201).send({})
+})
+
+app.listen(5000);
 
 let sequelize;
 if (config.use_env_variable) {
