@@ -4,16 +4,18 @@ module.exports = (sequelize, DataTypes) => {
   class ingredientsPrice extends Model {
    
     static associate(models) {
-      // define association here
+      ingredientsPrice.hasOne(models.ingredientsPrice, {
+        foreignKey: 'ingredientId'
+      })
     }
   }
   ingredientsPrice.init({
     ingredientId: {
-     type: Sequelize.DataTypes.INTEGER,
+     type: sequelize.DataTypes.INTEGER,
      allowNull: false
     },
     costPerUnit: {
-    type: Sequelize.DataTypes.DECIMAL(10,3),
+    type: sequelize.DataTypes.DECIMAL(10,3),
     allowNull: false
   }
   }, {

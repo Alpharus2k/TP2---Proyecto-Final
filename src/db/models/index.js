@@ -24,7 +24,7 @@ app.get('/', function(req,res) {
 app.getRecipeBook('/recipesBook', async function (req,res){
   let recipeBook = await recipesBook.find()
   return res.send(recipeBook)
-})
+});
 
 app.getAllIngredients('/ingredients', async function (req,res) {
   const resul = {}
@@ -32,7 +32,7 @@ app.getAllIngredients('/ingredients', async function (req,res) {
     resul.push(ingredient)
   })
   return res.send(resul)
-})
+});
 
 app.getIngredientById('/ingredients/:ingredientId/', async function (req,res) {
   let ingredient = await ingredients.find(ingredient => ingredient.ingredientId=req.params)
