@@ -21,12 +21,12 @@ app.get('/', function(req,res) {
   res.send('');
 });
 
-app.getRecipeBook('/recipesBook', async function (req,res){
+app.get('/recipesBook', async function (req,res){
   let recipeBook = await recipesBook.find()
   return res.send(recipeBook)
 });
 
-app.getAllIngredients('/ingredients', async function (req,res) {
+app.get('/ingredients', async function (req,res) {
   const resul = {}
   await ingredients.forEach(function (ingredient) {
     resul.push(ingredient)
@@ -34,12 +34,12 @@ app.getAllIngredients('/ingredients', async function (req,res) {
   return res.send(resul)
 });
 
-app.getIngredientById('/ingredients/:ingredientId/', async function (req,res) {
+app.get('/ingredients/:ingredientId/', async function (req,res) {
   let ingredient = await ingredients.find(ingredient => ingredient.ingredientId=req.params)
   return res.send(ingredient)
 })
 
-app.getAllPeople('/people', async function(req,res) {
+app.get('/people', async function(req,res) {
   const resulPeople = {}
   await people.forEach(function(people) {
     resulPeople.push(people)
@@ -47,12 +47,12 @@ app.getAllPeople('/people', async function(req,res) {
   return res.send(resulPeople)
 })
 
-app.getPeopleById('/people/:peopleId/', async function (req, res) {
+app.get('/people/:peopleId/', async function (req, res) {
   let people = await people.find(people => people.peopleId = req.params)
   return res.send(people)
 })
 
-app.getAllClients('/clients', async function (req, res) {
+app.get('/clients', async function (req, res) {
   const resulClients = {}
   await clients.forEach(function(client) {
     resulClients.push(client)
