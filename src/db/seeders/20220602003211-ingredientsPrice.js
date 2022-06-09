@@ -24,12 +24,12 @@ module.exports = {
       }
 
     ]
-    await queryInterface.bulkInsert('ingedientsPrice', list, {});
+    await queryInterface.bulkInsert('ingredientsPrice', list, {});
    
   },
 
   async down (queryInterface, Sequelize) {
-    await queryInterface.bulkDelete('ingedientsPrice', null, {});
+    await queryInterface.bulkDelete('ingredientsPrice', null, {});
     
   }
 };
