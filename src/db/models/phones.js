@@ -5,8 +5,8 @@ module.exports = (sequelize, DataTypes) => {
   class Phones extends Model {
     
     static associate(models) {
-      Phones.belongsTo(models.People, {
-        foreignKey: 'peopleId',
+      Phones.hasOne(models.people, {
+        foreignKey: 'peopleId'
       })
     }
   }
@@ -33,7 +33,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }, {
     sequelize,
-    modelName: 'Phones',
+    modelName: 'phones',
     tableName: 'phones',
   });
   return Phones;

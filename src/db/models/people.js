@@ -4,7 +4,10 @@ module.exports = (sequelize, DataTypes) => {
   class People extends Model {
  
     static associate(models) {
-      
+      People.belongsToMany(models.addresses, {
+        through: 'addressBook'
+      }),
+      People.belongsTo(models.phones)
     }
   }
   People.init({
@@ -20,7 +23,7 @@ module.exports = (sequelize, DataTypes) => {
        }
   }, {
     sequelize,
-    modelName: 'People',
+    modelName: 'people',
     tableName: 'people'
   });
   return People;

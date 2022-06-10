@@ -4,11 +4,11 @@ module.exports = (sequelize, DataTypes) => {
   class AddressBook extends Model {
     
     static associate(models) {
-      AddressBook.hasOne(models.Addresses, {
-        foreignKey: 'addressId'
+      AddressBook.hasMany(models.addresses, {
+        foreignKey: 'addressId',
       }),
-      AddressBook.belongsToMany(models.People, {
-        through: 'people_addressBook'
+      AddressBook.hasMany(models.people, {
+        foreignKey: 'peopleId'
       })
     }
   }
@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false}
   }, {
     sequelize,
-    modelName: 'AddressBook',
+    modelName: 'addressBook',
     tableName: 'addressBook',
   });
   return AddressBook;

@@ -4,7 +4,12 @@ module.exports = (sequelize, DataTypes) => {
   class FoodHazardsIngredients extends Model {
     
     static associate(models) {
-      // define association here
+      FoodHazardsIngredients.hasMany(models.ingredients, {
+        foreignKey: 'ingredientId'
+      }),
+      FoodHazardsIngredients.hasMany(models.foodDangers, {
+        foreignKey: 'foodDangersId'
+      })
     }
   }
   FoodHazardsIngredients.init({
@@ -18,7 +23,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }, {
     sequelize,
-    modelName: 'FoodHazardsIngredients',
+    modelName: 'foodHazardsIngredients',
     tableName: 'foodHazardsIngredients',
   });
   return FoodHazardsIngredients;

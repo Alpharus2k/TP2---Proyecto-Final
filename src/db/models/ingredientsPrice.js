@@ -4,7 +4,9 @@ module.exports = (sequelize, DataTypes) => {
   class ingredientsPrice extends Model {
    
     static associate(models) {
-      // define association here
+      ingredientsPrice.hasOne(models.ingredients, {
+        foreignKey: 'ingredientId'
+      })
     }
   }
   ingredientsPrice.init({
@@ -18,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   }, {
     sequelize,
-    modelName: 'IngredientsPrice',
+    modelName: 'ingredientsPrice',
     tableName: 'ingredientsPrice'
   });
   return ingredientsPrice;

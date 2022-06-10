@@ -6,7 +6,10 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
      RecipesBook.hasMany(models.recipes, {
        foreignKey: 'recipeId'
-     })
+     }),
+     RecipesBook.hasMany(models.ingredients, {
+      foreignKey: 'ingredientId'
+    })
     }
   }
   RecipesBook.init({

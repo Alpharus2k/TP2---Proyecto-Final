@@ -4,8 +4,15 @@ module.exports = (sequelize, DataTypes) => {
   class Ingredients extends Model {
     
     static associate(models) {
-      Ingredients.hasOne(models.TypeMeasures, {
-        foreignKey: 'typeMeasureId'
+      Ingredients.hasOne(models.typeMeasures, {
+        foreignKey: 'typeMeasuresId',
+      }),
+      Ingredients.belongsToMany(models.foodDangers, {
+        through: 'foodHazardsIngredients',
+      }),
+      Ingredients.belongsTo(models.ingredientsPrice),
+      Ingredients.belongsToMany(models.recipes, {
+        through: 'recipesBook'
       })
     }
   }
@@ -21,7 +28,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }, {
     sequelize,
-    modelName: 'Ingredients',
+    modelName: 'ingredients',
     tableName: 'ingredients',
   });
   return Ingredients;

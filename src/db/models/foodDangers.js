@@ -4,7 +4,12 @@ module.exports = (sequelize, DataTypes) => {
   class FoodDangers extends Model {
 
     static associate(models) {
-      // define association here
+      FoodDangers.belongsToMany(models.ingredients, {
+        through: 'foodHazardsIngredients',
+     }),
+      FoodDangers.belongsToMany(models.clients, {
+      through: 'foodHazardsClients',
+      })
     }
   }
   FoodDangers.init({
@@ -15,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }, {
     sequelize,
-    modelName: 'FoodDangers',
+    modelName: 'foodDangers',
     tableName: 'foodDangers',
   });
   return FoodDangers;
