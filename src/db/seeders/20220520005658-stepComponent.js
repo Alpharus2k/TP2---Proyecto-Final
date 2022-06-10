@@ -2,7 +2,7 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.bulkInsert('stepComponents', [{
+    return queryInterface.bulkInsert('cookedIngredients', [{
       recipeId: 1,
       ingredientId: 1,
       ingredientAmount: 10,
@@ -11,6 +11,6 @@ module.exports = {
     }]);
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.bulkDelete('stepComponents', null, {});
+    return queryInterface.bulkDelete('cookedIngredients', null, {});
   }
 };

@@ -1,11 +1,11 @@
 require('dotenv').config();
 const app = require('./app');
 
-const {RecipesBook} = require('./db/models')
-const {clients} = require('./db/models');
-const {recipes} = require('./db/models');
-const {people} = require('./db/models');
-const {ingredients} = require('./db/models');
+const {RecipesBook} = require('./db/models');
+const {Client} = require('./db/models');
+const {Recipes} = require('./db/models');
+const {People} = require('./db/models');
+const {Ingredients} = require('./db/models');
 
 
 async function main() {
@@ -16,11 +16,11 @@ async function main() {
 app.get('/', function(req,res) {
     res.send('prueba');
   });
+
   app.get('/recipesBook', async function (req,res){
-//    let recipeBook = await RecipesBook.find()
-//    console.log(recipeBook)
+   console.log(RecipesBook)
     return res.send('hola')
-  });
+  }); 
   
   app.get('/ingredients', async function (req,res) {
     const resul = {}
