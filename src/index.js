@@ -1,7 +1,7 @@
 require('dotenv').config();
 const app = require('./app');
 
-const {RecipesBook} = require('./db/models');
+const {recipesBook} = require('./db/models');
 const {Client} = require('./db/models');
 const {Recipes} = require('./db/models');
 const {People} = require('./db/models');
@@ -18,8 +18,7 @@ app.get('/', function(req,res) {
   });
 
   app.get('/recipesBook', async function (req,res){
-   console.log(RecipesBook)
-    return res.send('hola')
+    return res.send(await recipesBook.findAll())
   }); 
 
   
