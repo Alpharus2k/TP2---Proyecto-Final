@@ -11,11 +11,11 @@ module.exports = (sequelize, DataTypes) => {
   }
   Recipes.init({
     name: {
-      type: Sequelize.DataTypes.STRING(100),
+      type: DataTypes.STRING(100),
       allowNull: false
     },
     description: {
-      type: Sequelize.DataTypes.STRING(200),
+      type: DataTypes.STRING(200),
       allowNull: true
     }
   }, {

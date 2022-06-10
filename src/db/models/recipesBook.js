@@ -11,15 +11,15 @@ module.exports = (sequelize, DataTypes) => {
   }
   RecipesBook.init({
     recipeId: {
-      type: Sequelize.DataTypes.INTEGER.UNSIGNED,
+      type: DataTypes.INTEGER.UNSIGNED,
       allowNull: false
     },
     ingredientId: {
-      type: Sequelize.DataTypes.INTEGER.UNSIGNED,
+      type: DataTypes.INTEGER.UNSIGNED,
       allowNull: false
     },
     perProducedUnit: {
-      type: Sequelize.DataTypes.DECIMAL(10, 2),
+      type: DataTypes.DECIMAL(10, 2),
       allowNull: false
     }
   }, {

@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   FoodDangers.init({
     name: {
-      type: Sequelize.DataTypes.STRING(80),
+      type: DataTypes.STRING(80),
       unique: true,
       allowNull: false
     }

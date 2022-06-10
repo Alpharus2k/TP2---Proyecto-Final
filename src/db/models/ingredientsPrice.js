@@ -9,11 +9,11 @@ module.exports = (sequelize, DataTypes) => {
   }
   ingredientsPrice.init({
     ingredientId: {
-     type: Sequelize.DataTypes.INTEGER,
+     type: DataTypes.INTEGER,
      allowNull: false
     },
     costPerUnit: {
-    type: Sequelize.DataTypes.DECIMAL(10,3),
+    type: DataTypes.DECIMAL(10,3),
     allowNull: false
   }
   }, {

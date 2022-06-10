@@ -14,10 +14,10 @@ module.exports = (sequelize, DataTypes) => {
   }
   AddressBook.init({
     peopleId: {
-      type: Sequelize.DataTypes.INTEGER.UNSIGNED,
+      type: DataTypes.INTEGER.UNSIGNED,
       allowNull: false},
     addressId:{
-      type: Sequelize.DataTypes.INTEGER.UNSIGNED,
+      type: DataTypes.INTEGER.UNSIGNED,
       allowNull: false}
   }, {
     sequelize,

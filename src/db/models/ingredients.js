@@ -11,12 +11,12 @@ module.exports = (sequelize, DataTypes) => {
   }
   Ingredients.init({
     name: {
-      type: Sequelize.DataTypes.STRING(100),
+      type: DataTypes.STRING(100),
       unique: true,
       allowNull: false
     },
     typeMeasuresId: {
-      type: Sequelize.DataTypes.INTEGER.UNSIGNED,
+      type: DataTypes.INTEGER.UNSIGNED,
       allowNull: false
     }
   }, {

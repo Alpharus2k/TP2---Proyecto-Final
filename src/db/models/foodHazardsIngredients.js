@@ -9,11 +9,11 @@ module.exports = (sequelize, DataTypes) => {
   }
   FoodHazardsIngredients.init({
     ingredientId: {
-      type: Sequelize.DataTypes.INTEGER.UNSIGNED,
+      type: DataTypes.INTEGER.UNSIGNED,
       allowNull: false
     },
     foodDangersId: {
-      type: Sequelize.DataTypes.INTEGER.UNSIGNED,
+      type: DataTypes.INTEGER.UNSIGNED,
       allowNull: false
     }
   }, {

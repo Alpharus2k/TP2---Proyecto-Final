@@ -9,47 +9,47 @@ module.exports = (sequelize, DataTypes) => {
   }
   Addresses.init({
     peopleId: {
-      type: Sequelize.DataTypes.INTEGER.UNSIGNED,
+      type: DataTypes.INTEGER.UNSIGNED,
       allowNull: false
     },
     country: {
-      type: Sequelize.DataTypes.STRING(60),
+      type: DataTypes.STRING(60),
       allowNull: false
     },
     city: {
-      type: Sequelize.DataTypes.STRING(60),
+      type: DataTypes.STRING(60),
       allowNull: false
     },
     county: {
-      type: Sequelize.DataTypes.STRING(60),
+      type: DataTypes.STRING(60),
       allowNull: false
     },
     zipCode: {
-      type: Sequelize.DataTypes.STRING(10),
+      type: DataTypes.STRING(10),
       allowNull: true
     },
     street: {
-      type: Sequelize.DataTypes.STRING(200),
+      type: DataTypes.STRING(200),
       allowNull: false
     },
     number: {
-      type: Sequelize.DataTypes.INTEGER.UNSIGNED,
+      type: DataTypes.INTEGER.UNSIGNED,
       allowNull: false
     },
     floor: {
-      type: Sequelize.DataTypes.INTEGER,
+      type: DataTypes.INTEGER,
       allowNull: true
     },
     department: {
-      type: Sequelize.DataTypes.STRING(5),
+      type: DataTypes.STRING(5),
       allowNull: true
     },
     tower: {
-      type: Sequelize.DataTypes.STRING(20),
+      type: DataTypes.STRING(20),
       allowNull: true
     },
     note: {
-      type: Sequelize.DataTypes.STRING(300),
+      type: DataTypes.STRING(300),
       allowNull: true
     }
   }, {

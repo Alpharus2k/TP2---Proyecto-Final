@@ -11,11 +11,11 @@ module.exports = (sequelize, DataTypes) => {
 }
   FoodHazardsClient.init({
     clientId: {
-      type: Sequelize.DataTypes.INTEGER.UNSIGNED,
+      type: DataTypes.INTEGER.UNSIGNED,
       allowNull: false
     },
     foodDangerId: {
-      type: Sequelize.DataTypes.INTEGER.UNSIGNED,
+      type: DataTypes.INTEGER.UNSIGNED,
       allowNull: false
     }
   }, {
