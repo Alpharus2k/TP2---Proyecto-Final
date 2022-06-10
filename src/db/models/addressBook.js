@@ -4,24 +4,24 @@ module.exports = (sequelize, DataTypes) => {
   class AddressBook extends Model {
     
     static associate(models) {
-      AddressBook.hasOne(models.Addresses, {
-        foreignKey: 'addressId'
+      AddressBook.hasOne(models.addresses, {
+        foreignKey: 'addressId',
       }),
-      AddressBook.belongsToMany(models.People, {
+      AddressBook.belongsToMany(models.people, {
         through: 'people_addressBook'
       })
     }
   }
   AddressBook.init({
     peopleId: {
-      type: Sequelize.DataTypes.INTEGER.UNSIGNED,
+      type: DataTypes.INTEGER.UNSIGNED,
       allowNull: false},
     addressId:{
-      type: Sequelize.DataTypes.INTEGER.UNSIGNED,
+      type: DataTypes.INTEGER.UNSIGNED,
       allowNull: false}
   }, {
     sequelize,
-    modelName: 'AddressBook',
+    modelName: 'addressBook',
     tableName: 'addressBook',
   });
   return AddressBook;

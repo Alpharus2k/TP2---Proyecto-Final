@@ -4,23 +4,22 @@ module.exports = (sequelize, DataTypes) => {
   class Recipes extends Model {
    
     static associate(models) {
-     Recipes.hasMany(models.Ingredients, {
-       through: 'recipes_ingredients'
-     })
+     
     }
-  }
+  } 
+
   Recipes.init({
     name: {
-      type: Sequelize.DataTypes.STRING(100),
+      type: DataTypes.STRING(100),
       allowNull: false
     },
     description: {
-      type: Sequelize.DataTypes.STRING(200),
+      type: DataTypes.STRING(200),
       allowNull: true
     }
   }, {
     sequelize,
-    modelName: 'Recipes',
+    modelName: 'recipes',
     tableName: 'recipes',
   });
   return Recipes;

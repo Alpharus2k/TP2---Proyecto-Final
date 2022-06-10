@@ -4,23 +4,25 @@ module.exports = (sequelize, DataTypes) => {
   class People extends Model {
  
     static associate(models) {
-      
+      People.belongsToMany(models.addresses, {
+        through: 'addressBook'
+      })
     }
   }
   People.init({
     name:{
-      type: Sequelize.DataTypes.STRING(120),
+      type: DataTypes.STRING(120),
       allowNull: false
        },
        
     email:{
-      type: Sequelize.DataTypes.STRING(100),
+      type: DataTypes.STRING(100),
       unique: true,
       allowNull: true
        }
   }, {
     sequelize,
-    modelName: 'People',
+    modelName: 'people',
     tableName: 'people'
   });
   return People;

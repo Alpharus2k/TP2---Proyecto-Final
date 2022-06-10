@@ -4,14 +4,8 @@ module.exports = (sequelize, DataTypes) => {
   class Client extends Model {
 
     static associate(models) {
-       Client.belongsToMany(models.addressBook, {
-        through: 'client_addressBook',
-      }),
-      Client.belongsTo(models.People, {
+      Client.hasOne(models.people, {
         foreignKey: 'peopleId',
-      }),
-      Client.hasMany(models.FoodHazardsClients, {
-        through: 'client_foodHazard'
       })
     }
   }
@@ -21,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
     note: DataTypes.STRING
   }, {
     sequelize,
-    modelName: 'Client',
+    modelName: 'clients',
     tablename: 'clients',
   });
   return Client;

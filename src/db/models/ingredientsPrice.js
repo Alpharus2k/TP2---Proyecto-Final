@@ -4,24 +4,24 @@ module.exports = (sequelize, DataTypes) => {
   class ingredientsPrice extends Model {
    
     static associate(models) {
-      ingredientsPrice.hasOne(models.ingredientsPrice, {
+      ingredientsPrice.hasOne(models.ingredients, {
         foreignKey: 'ingredientId'
       })
     }
   }
   ingredientsPrice.init({
     ingredientId: {
-     type: sequelize.DataTypes.INTEGER,
+     type: DataTypes.INTEGER,
      allowNull: false
     },
     costPerUnit: {
-    type: sequelize.DataTypes.DECIMAL(10,3),
+    type: DataTypes.DECIMAL(10,3),
     allowNull: false
   }
   }, {
     sequelize,
-    modelName: 'IngredientsPrice',
-    tableName: 'ingredientsPrice'
+    modelName: 'ingredientsPrices',
+    tableName: 'ingredientsPrices'
   });
   return ingredientsPrice;
 };

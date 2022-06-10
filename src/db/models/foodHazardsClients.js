@@ -4,23 +4,21 @@ module.exports = (sequelize, DataTypes) => {
   class FoodHazardsClient extends Model {
 
     static associate(models) {
-     FoodHazardsClient.hasMany(models.foodDanger, {
-       foreignKey: 'foodDangerId',
-     })
+      
   }
 }
   FoodHazardsClient.init({
     clientId: {
-      type: Sequelize.DataTypes.INTEGER.UNSIGNED,
+      type: DataTypes.INTEGER.UNSIGNED,
       allowNull: false
     },
     foodDangerId: {
-      type: Sequelize.DataTypes.INTEGER.UNSIGNED,
+      type: DataTypes.INTEGER.UNSIGNED,
       allowNull: false
     }
   }, {
     sequelize,
-    modelName: 'FoodHazardsClients',
+    modelName: 'foodHazardsClients',
     tableName: 'foodHazardsClients',
   });
   return FoodHazardsClient;

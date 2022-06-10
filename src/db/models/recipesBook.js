@@ -11,20 +11,20 @@ module.exports = (sequelize, DataTypes) => {
   }
   RecipesBook.init({
     recipeId: {
-      type: sequelize.DataTypes.INTEGER.UNSIGNED,
+      type:DataTypes.INTEGER.UNSIGNED,
       allowNull: false
     },
     ingredientId: {
-      type: sequelize.DataTypes.INTEGER.UNSIGNED,
+      type: DataTypes.INTEGER.UNSIGNED,
       allowNull: false
     },
     perProducedUnit: {
-      type: sequelize.DataTypes.DECIMAL(10, 2),
+      type: DataTypes.DECIMAL(10, 2),
       allowNull: false
     }
   }, {
     sequelize,
-    modelName: 'RecipesBook',
+    modelName: 'recipesBook',
     tableName: 'recipesBook',
   });
   return RecipesBook;

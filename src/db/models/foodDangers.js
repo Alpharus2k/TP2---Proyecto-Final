@@ -4,18 +4,23 @@ module.exports = (sequelize, DataTypes) => {
   class FoodDangers extends Model {
 
     static associate(models) {
-      // define association here
+      FoodDangers.belongsToMany(models.ingredients, {
+        through: 'foodHazardsIngredients',
+     } ),
+      FoodDangers.belongsToMany(models.clients, {
+        through: 'foodHazardsClients',
+      })
     }
   }
   FoodDangers.init({
     name: {
-      type: Sequelize.DataTypes.STRING(80),
+      type: DataTypes.STRING(80),
       unique: true,
       allowNull: false
     }
   }, {
     sequelize,
-    modelName: 'FoodDangers',
+    modelName: 'foodDangers',
     tableName: 'foodDangers',
   });
   return FoodDangers;

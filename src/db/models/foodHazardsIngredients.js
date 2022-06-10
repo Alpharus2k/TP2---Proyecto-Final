@@ -4,21 +4,21 @@ module.exports = (sequelize, DataTypes) => {
   class FoodHazardsIngredients extends Model {
     
     static associate(models) {
-      // define association here
+      
     }
   }
   FoodHazardsIngredients.init({
     ingredientId: {
-      type: Sequelize.DataTypes.INTEGER.UNSIGNED,
+      type: DataTypes.INTEGER.UNSIGNED,
       allowNull: false
     },
     foodDangersId: {
-      type: Sequelize.DataTypes.INTEGER.UNSIGNED,
+      type: DataTypes.INTEGER.UNSIGNED,
       allowNull: false
     }
   }, {
     sequelize,
-    modelName: 'FoodHazardsIngredients',
+    modelName: 'foodHazardsIngredients',
     tableName: 'foodHazardsIngredients',
   });
   return FoodHazardsIngredients;
