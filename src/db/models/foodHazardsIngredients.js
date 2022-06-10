@@ -4,7 +4,12 @@ module.exports = (sequelize, DataTypes) => {
   class FoodHazardsIngredients extends Model {
     
     static associate(models) {
-      
+      FoodHazardsIngredients.hasMany(models.ingredients, {
+        foreignKey: 'ingredientId'
+      }),
+      FoodHazardsIngredients.hasMany(models.foodDangers, {
+        foreignKey: 'foodDangersId'
+      })
     }
   }
   FoodHazardsIngredients.init({

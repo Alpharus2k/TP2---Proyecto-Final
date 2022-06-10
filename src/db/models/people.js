@@ -6,7 +6,8 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       People.belongsToMany(models.addresses, {
         through: 'addressBook'
-      })
+      }),
+      People.belongsTo(models.phones)
     }
   }
   People.init({

@@ -20,8 +20,8 @@ module.exports = (sequelize, DataTypes) => {
   }
   }, {
     sequelize,
-    modelName: 'ingredientsPrices',
-    tableName: 'ingredientsPrices'
+    modelName: 'ingredientsPrice',
+    tableName: 'ingredientsPrice'
   });
   return ingredientsPrice;
 };

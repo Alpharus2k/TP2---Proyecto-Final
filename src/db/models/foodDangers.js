@@ -6,9 +6,9 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       FoodDangers.belongsToMany(models.ingredients, {
         through: 'foodHazardsIngredients',
-     } ),
+     }),
       FoodDangers.belongsToMany(models.clients, {
-        through: 'foodHazardsClients',
+      through: 'foodHazardsClients',
       })
     }
   }

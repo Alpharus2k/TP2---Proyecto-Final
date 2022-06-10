@@ -9,6 +9,10 @@ module.exports = (sequelize, DataTypes) => {
       }),
       Ingredients.belongsToMany(models.foodDangers, {
         through: 'foodHazardsIngredients',
+      }),
+      Ingredients.belongsTo(models.ingredientsPrice),
+      Ingredients.belongsToMany(models.recipes, {
+        through: 'recipesBook'
       })
     }
   }

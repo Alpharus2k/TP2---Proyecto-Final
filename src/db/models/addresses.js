@@ -4,7 +4,9 @@ module.exports = (sequelize, DataTypes) => {
   class Addresses extends Model {
     
     static associate(models) {
-      // define association here
+      Addresses.belongsToMany(models.people, {
+        through: 'addressBook'
+      })
     }
   }
   Addresses.init({

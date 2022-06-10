@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
   class TypeMeasures extends Model {
     
     static associate(models) {
-     
+     TypeMeasures.belongsTo(models.ingredients)
     }
   }
   TypeMeasures.init({

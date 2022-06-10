@@ -4,7 +4,9 @@ module.exports = (sequelize, DataTypes) => {
   class Recipes extends Model {
    
     static associate(models) {
-     
+     Recipes.belongsToMany(models.ingredients, {
+      through: 'recipesBook'
+     })
     }
   } 
 

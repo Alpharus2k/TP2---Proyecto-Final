@@ -6,6 +6,9 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       Client.hasOne(models.people, {
         foreignKey: 'peopleId',
+      }),
+      Client.belongsToMany(models.foodDangers, {
+        through: 'foodHazardsClients'
       })
     }
   }
