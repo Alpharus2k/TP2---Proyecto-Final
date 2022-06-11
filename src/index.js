@@ -5,7 +5,7 @@ const {recipesBook} = require('./db/models');
 const {clients} = require('./db/models');
 const {recipes} = require('./db/models');
 const {people} = require('./db/models');
-const {ingredients} = require('./db/models');
+const {ingredients, ingredientsPrice} = require('./db/models');
 
 async function main() {
     await app.listen(app.get('port'));
@@ -16,6 +16,10 @@ app.get('/', function(req,res) {
     res.send('prueba');
   });
 
+  app.get('/ingredientsPrice', async function (req,res){
+    return res.send(await ingredientsPrice.findAll())
+  });
+  
   app.get('/recipesBook', async function (req,res){
     return res.send(await recipesBook.findAll())
   }); 
