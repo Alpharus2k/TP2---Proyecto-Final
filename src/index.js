@@ -2,11 +2,10 @@ require('dotenv').config();
 const app = require('./app');
 
 const {recipesBook} = require('./db/models');
-const {Client} = require('./db/models');
-const {Recipes} = require('./db/models');
-const {People} = require('./db/models');
-const {Ingredients} = require('./db/models');
-
+const {clients} = require('./db/models');
+const {recipes} = require('./db/models');
+const {people} = require('./db/models');
+const {ingredients} = require('./db/models');
 
 async function main() {
     await app.listen(app.get('port'));
@@ -21,13 +20,8 @@ app.get('/', function(req,res) {
     return res.send(await recipesBook.findAll())
   }); 
 
-  
   app.get('/ingredients', async function (req,res) {
-    const resul = {}
-    await ingredients.forEach(function (ingredient) {
-      resul.push(ingredient)
-    })
-    return res.send(resul)
+    return res.send(await ingredients.findAll())
   });
   
   app.get('/ingredients/:ingredientId/', async function (req,res) {
@@ -36,12 +30,8 @@ app.get('/', function(req,res) {
   })
   
   app.get('/people', async function(req,res) {
-    const resulPeople = {}
-    await people.forEach(function(people) {
-      resulPeople.push(people)
-    })
-    return res.send(resulPeople)
-  })
+    return res.send(await people.findAll())
+  });
   
   app.get('/people/:peopleId/', async function (req, res) {
     let people = await people.find(people => people.peopleId = req.params)
@@ -49,11 +39,7 @@ app.get('/', function(req,res) {
   })
   
   app.get('/clients', async function (req, res) {
-    const resulClients = {}
-    await clients.forEach(function(client) {
-      resulClients.push(client)
-    })
-    return res.send(resulClients)
+     return res.send(clients.findAll())
   })
   
   app.get('/clients/:peopleId/', async function(req,res){
@@ -62,11 +48,7 @@ app.get('/', function(req,res) {
   })
   
   app.get('/recipes', async function (req,res){
-    const resulRecipes = {}
-    await recipes.forEach(function(recipe){
-      resulRecipes.push(recipe)
-    })
-    return res.send(resulRecipes)
+    return res.send(recipes.findAll())
   })
   
   app.get('/recipes/:recipeId', async function(req,res) {
@@ -74,8 +56,7 @@ app.get('/', function(req,res) {
     return res.send(recipe)
   })
   
-  
-  
+
   app.post('/recipeBook', async function (req,res) {
     await recipesBook.create ({
       perProducedUnit: req.body.perProducedUnit
